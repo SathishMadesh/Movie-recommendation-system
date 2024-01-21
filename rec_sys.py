@@ -21,3 +21,12 @@ print(data.isnull().sum())
 
 data = data.dropna()
 print(data)
+
+def clean(text):
+    text = str(text).lower()
+    text = re.sub('\[.*?\]','',text)
+    text = re.sub('http?s?://\S+|www.\.S+','',text)
+    text = re.sub('<.*?>+','',text)
+    text = re.sub('[%s]'%re.escape(string.punctuation),'',text)
+    text = re.sub('\n','',text)
+    text = re.sub('\w*\d\w','',text)
