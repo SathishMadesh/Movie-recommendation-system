@@ -1,11 +1,15 @@
-import os
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction import text
 from sklearn.metrics.pairwise import cosine_similarity
-import nltk
-import re
-nltk.download('stopwords')
+import nltk #NLP library
+import re  #regular expression
+nltk.download('stopwords') #download the extension
+stemmer = nltk.SnowballStemmer("english") #create stemmer method
+from nltk.corpus import stopwords #load stopwords
+import string
+stopword = set(stopwords.words('english'))
+
 
 
 data = pd.read_csv("netflixdata.csv")
