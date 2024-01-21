@@ -5,6 +5,7 @@ from sklearn.feature_extraction import text
 from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 import re
+nltk.download('stopwords')
 
 
 data = pd.read_csv("netflixdata.csv")
